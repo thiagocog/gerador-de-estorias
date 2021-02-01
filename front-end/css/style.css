@@ -1,0 +1,29 @@
+/* RESET */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* HEADER */
+
+header {
+  min-height: 50px;
+  background-color: #dddddd;
+}
+
+
+/* MAIN */
+
+main {
+  
+}
+
+/* FOOTER */
+
+footer {
+  min-height: 50px;
+  background-color: #cccccc;
+}

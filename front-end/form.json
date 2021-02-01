@@ -1,0 +1,12 @@
+{
+  "form": [
+    {
+      "id": 1, 
+      "name": "fulano", 
+      "email": "fulano@teste.com", 
+      "age": "10/03/2001",
+      "gender": 1,
+      "maritalStatus": 1,
+    }
+  ]
+}
