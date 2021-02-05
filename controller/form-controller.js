@@ -19,7 +19,7 @@ const handlePostForm = (req, res, next) => {
   // ATRIBUTOS QUE O TEMPLATE USARÁ PARA CONSTRUIR O HTML DINAMICAMENTE
   const viewModel = {
     fatherName: body.fatherName, 
-    matherName: body.matherName,
+    motherName: body.motherName,
     email: body.email,
     childName: body.childName,
     childGender: body.childGender,
