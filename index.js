@@ -1,8 +1,7 @@
 // IMPORTANDO PACOTES
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser')
-const jsonParser = bodyParser.json();
+const bodyParser = require('body-parser');
 
 
 // CRIANDO A APLICAÇÃO
@@ -20,19 +19,24 @@ app.set('view engine', 'ejs');
 
 // ESTABELECENDO QUAIS ARQUIVOS ESTÁTICOS SERÃO UTILIZADOS
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+// CONFIGURANDO O BODY-PARSER
+app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
 
 // CONFIGURANDO O HANDLE RAIZ (HOME OU INDEX)
 const handleHome = (req, res, next) => {
   res.render('index');
+  // next();
 };
 
 
-// CONFIGURANDO AS ROTAS
+// CONFIGURANDO AS ROTAS DA APLICAÇÃO
 app.get('/', handleHome);
 app.get('/form', formController.getForm);
-app.post('/form', jsonParser, formController.postForm);
+app.post('/form', formController.postForm);
 app.get('/about', aboutController.getAbout);
 
 
