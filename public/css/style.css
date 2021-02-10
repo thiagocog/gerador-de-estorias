@@ -153,7 +153,7 @@ main .formGenerator .slice .form-group input {
   background-color: aliceblue;
   font-family: monospace;
   padding-left: 5px;
-  color: rgb(216, 140, 27);
+  color: rgb(216, 140, 27) !important;
   border-color: transparent;
   border-radius: 8px;
 }

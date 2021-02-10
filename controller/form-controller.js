@@ -1,28 +1,43 @@
-// IMPORTANDO BIBLIOTECAS
+//-- IMPORTANDO BIBLIOTECAS
 const ejs = require('ejs');
 const fs = require('fs');
 const htmlToPdf = require('html-pdf-node');
 
+const modelGender = require('../models/sexo-model');
 
-// HANDLER FORM
-const handleForm = (req, res, next) => {
-  res.render('form');
+//-- HANDLER GET FORM
+const handleGetForm = (req, res, next) => {
+  const allGender = modelGender.getAll();
+  const genderItens = allGender.map((item) => {
+    return {
+      value: item.id,
+      label: item.descricao,
+    };
+  });
+
+  const getViewModel = {
+    sexo: genderItens,
+  };
+
+
+  res.render('form'); // incluir o getViewModel como parâmetro neste método.
 };
 
 
-// HANDLER POST FORM
+
+//-- HANDLER POST FORM
 const handlePostForm = (req, res, next) => {
 
   const body = req.body;
+  const genderResult = modelGender.getGenderById(body.childGender);
 
-
-  // ATRIBUTOS QUE O TEMPLATE USARÁ PARA CONSTRUIR O HTML DINAMICAMENTE
+  //-- ATRIBUTOS QUE O TEMPLATE USARÁ PARA CONSTRUIR O HTML DINAMICAMENTE
   const viewModel = {
     fatherName: body.fatherName, 
     motherName: body.motherName,
     email: body.email,
     childName: body.childName,
-    childGender: body.childGender,
+    childGender: genderResult.descricao,
     born: body.born,
     play: body.play,
     friendName: body.friendName,
@@ -31,15 +46,15 @@ const handlePostForm = (req, res, next) => {
   };
 
 
-  // TIRAR DÚVIDA (EZER) QUANDO À NECESSIDADE DESSA LINHA
+  //-- TIRAR DÚVIDA (EZER) QUANDO À NECESSIDADE DESSA LINHA
   htmlText = fs.readFileSync('./views/estoria-pdf.ejs', 'utf8');
 
 
-  // JUNTANDO O TEMPLATE COM OS DADOS RECOLHIDOS DO USUÁRIO
+  //-- JUNTANDO O TEMPLATE COM OS DADOS RECOLHIDOS DO USUÁRIO
   htmlPronto = ejs.render(htmlText, viewModel);
 
 
-  // CONFIGURANDO OS OBJETOS QUE SERÃO PASSADOS COMO ARGUMENTOS PARA A CRIAÇÃO DO PDF
+  //-- CONFIGURANDO OS OBJETOS QUE SERÃO PASSADOS COMO ARGUMENTOS PARA A CRIAÇÃO DO PDF
   let file = {
     content: htmlPronto,
   };
@@ -49,7 +64,7 @@ const handlePostForm = (req, res, next) => {
   };
 
 
-  // GERANDO O PDF
+  //-- GERANDO O PDF
   htmlToPdf.generatePdf(file, options)
     .then((pdfBuffer) => {
       res.contentType('application/pdf'); // informando ao browser o tipo de documento que será enviado
@@ -58,8 +73,8 @@ const handlePostForm = (req, res, next) => {
 };
 
 
-// EXPORTAÇÃO DOS MÓDULOS
+//-- EXPORTAÇÃO DOS MÓDULOS
 module.exports = {
-  getForm: handleForm,
-  postForm: handlePostForm,
+  getForm: handleGetForm,
+  postForm: handlePostForm, 
 }
