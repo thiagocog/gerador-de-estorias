@@ -4,9 +4,12 @@ const fs = require('fs');
 const htmlToPdf = require('html-pdf-node');
 
 const modelGender = require('../models/sexo-model');
+const modelAnimal = require('../models/animais-model')
 
 //-- HANDLER GET FORM
 const handleGetForm = (req, res, next) => {
+
+  // Gênero
   const allGender = modelGender.getAll();
   const genderItens = allGender.map((item) => {
     return {
@@ -15,12 +18,22 @@ const handleGetForm = (req, res, next) => {
     };
   });
 
+  // Animais
+  const allAnimals = modelAnimal.getAll()
+  const animalsItens = allAnimals.map((item) => {
+    return {
+      value: item.id,
+      option: item.name
+    }
+  })
+
   const getViewModel = {
     sexo: genderItens,
-  };
+    animal: animalsItens
+  }
 
 
-  res.render('form'); // incluir o getViewModel como parâmetro neste método.
+  res.render('form', getViewModel) // incluir o getViewModel como parâmetro neste método.
 };
 
 
@@ -29,7 +42,9 @@ const handleGetForm = (req, res, next) => {
 const handlePostForm = (req, res, next) => {
 
   const body = req.body;
-  const genderResult = modelGender.getGenderById(body.childGender);
+
+  const genderResult = modelGender.getGenderById(body.childGender)
+  const animalsResult = modelAnimal.getAnimalById(body.favoritePet)
 
   //-- ATRIBUTOS QUE O TEMPLATE USARÁ PARA CONSTRUIR O HTML DINAMICAMENTE
   const viewModel = {
@@ -42,8 +57,8 @@ const handlePostForm = (req, res, next) => {
     play: body.play,
     friendName: body.friendName,
     friendName2: body.friendName2,
-    favoritePet: body.favoritePet,
-  };
+    favoritePet: animalsResult.name
+  }
 
 
   //-- TIRAR DÚVIDA (EZER) QUANDO À NECESSIDADE DESSA LINHA

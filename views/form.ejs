@@ -74,10 +74,11 @@
           </div>
           <div class="form-group">
             <label for="favoritePet">Animal Preferido</label>
-            <select name="favoritePet" id="">
-              <option value="1">Cachorro</option>
-              <option value="2">Gato</option>
-              <option value="3">Coelho</option>
+            <select name="favoritePet" id="favoritePet">
+              <option value="">Selecione...</option>
+              <% animal.forEach(item => {(item) %>
+                <option value="<%= item.value %>"><%= item.option %></option>
+              <% }) %>             
             </select>
           </div>
         </div>
