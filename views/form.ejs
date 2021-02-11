@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/style.css">
   <title>Gerador de Estórias - Formulário</title>
 </head>
+
+
 <body>
   <header>
     <div class="intro">
@@ -65,22 +68,28 @@
           </div>
           <div class="form-group">
             <label for="play">Brincadeira Favorita</label>
-            <input type="text" id="play" name="play">
+            <input type="text" id="play" name="play" required>
           </div>
           <div class="form-group">
             <label for="friendName">Melhores amigos</label>
             <input type="text" id="friendName" name="friendName"><span> & </span>
             <input type="text" id="friendName2" name="friendName2">
           </div>
+
+
+
           <div class="form-group">
             <label for="favoritePet">Animal Preferido</label>
             <select name="favoritePet" id="favoritePet">
               <option value="">Selecione...</option>
-              <% animal.forEach(item => {(item) %>
+              <% animal.forEach(item => { %>
                 <option value="<%= item.value %>"><%= item.option %></option>
               <% }) %>             
             </select>
           </div>
+
+
+
         </div>
          
         <div class="btn">

@@ -1,5 +1,4 @@
 /* RESET */
-
 * {
   margin: 0;
   padding: 0;
@@ -51,23 +50,15 @@ header .container {
   flex-direction: row;
 }
 
-header .container .logo {}
-
 header .container .menu {
-  
   width: 960px;
   text-align: center;
-
 }
 
-header .container .menu ul {
-
-}
 
 header .container .menu ul li {
   display: inline-block;
   padding: 20px 0;
-  
 }
 
 header .container .menu ul li a {
