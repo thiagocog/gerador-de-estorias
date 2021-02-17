@@ -5,11 +5,13 @@ const htmlToPdf = require('html-pdf-node');
 
 const modelGender = require('../models/sexo-model');
 const modelAnimal = require('../models/animais-model')
+const modelState = require('../models/state-model')
+
 
 //-- HANDLER GET FORM
 const handleGetForm = (req, res, next) => {
 
-  // Gênero
+  //-- Gênero
   const allGender = modelGender.getAll();
   const genderItens = allGender.map((item) => {
     return {
@@ -18,7 +20,7 @@ const handleGetForm = (req, res, next) => {
     };
   });
 
-  // Animais
+  //-- Animais
   const allAnimals = modelAnimal.getAll()
   const animalsItens = allAnimals.map((item) => {
     return {
@@ -27,9 +29,19 @@ const handleGetForm = (req, res, next) => {
     }
   })
 
+  // -- Estados
+  const allStates = modelState.getAll()
+  const statesItens = allStates.map((item) => {
+    return {
+      value: item.id,
+      option: item.descricao
+    }
+  })
+
   const getViewModel = {
     sexo: genderItens,
-    animal: animalsItens
+    animal: animalsItens,
+    estado: statesItens
   }
 
 
@@ -45,12 +57,15 @@ const handlePostForm = (req, res, next) => {
 
   const genderResult = modelGender.getGenderById(body.childGender)
   const animalsResult = modelAnimal.getAnimalById(body.favoritePet)
+  const statesResult = modelState.getStateById(body.state)
 
   //-- ATRIBUTOS QUE O TEMPLATE USARÁ PARA CONSTRUIR O HTML DINAMICAMENTE
   const viewModel = {
     fatherName: body.fatherName, 
     motherName: body.motherName,
     email: body.email,
+    state: statesResult.descricao,
+    municipio: body.municipio,
     childName: body.childName,
     childGender: genderResult.descricao,
     born: body.born,
@@ -76,6 +91,7 @@ const handlePostForm = (req, res, next) => {
 
   let options = {
     format: 'A4',
+    printBackground: true
   };
 
 

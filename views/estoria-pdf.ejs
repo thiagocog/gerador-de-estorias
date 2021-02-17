@@ -5,17 +5,70 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <style>
+    * {
+      font-family: monospace;
+      border: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+    }
+
+    body {
+      background-color: rgb(236, 226, 198);
+      color: coral;
+    }
+
+    main {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: 40px;
+      padding: 20px;
+      border: 4px dashed rgb(216, 140, 27);
+      border-radius: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: rgb(0, 160, 8);
+    }
+
+    h1::after {
+      content: "";
+      display: block;
+      background-color: rgb(0, 160, 8);
+      width: 100px;
+      height: 2px;
+      margin: 10px auto 30px auto;
+    }
+
+    p {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+  </style>
 </head>
 <body>
-  <h1><%= fatherName %></h1>
-  <h1><%= motherName %></h1>
-  <h1><%= email %></h1>
-  <h1><%= childName %></h1>
-  <h1><%= childGender %></h1>
-  <h1><%= born %></h1>
-  <h1><%= play %></h1>
-  <h1><%= friendName %></h1>
-  <h1><%= friendName2 %></h1>
-  <h1><%= favoritePet %></h1>
+
+  <main>
+    <h1>O dia perfeito de <%= childName %></h1>
+    <p>No dia <%= born %>, nasceu <%= childName %>, para alegria dos seus pais, <%= fatherName %> e <%= motherName %>.</p>
+    <p>Naquele dia e naquela cidade, <%= municipio %>, <%= state %>, não havia família mais feliz.</p>
+    
+
+    <p><%= email %></p>
+    <p><%= state %></p>
+    <p><%= municipio %></p>
+
+    <p><%= childGender %></p>
+    <p><%= born %></p>
+    <p><%= play %></p>
+    <p><%= friendName %></p>
+    <p><%= friendName2 %></p>
+    <p><%= favoritePet %></p>
+  </main>
+
 </body>
 </html>

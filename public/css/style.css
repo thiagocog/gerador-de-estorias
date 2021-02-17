@@ -76,27 +76,6 @@ header .container .menu ul li a:hover {
 
 /* MAIN */
 
-/* <main>
-<div class="formGenerator container">
-
-  <form action="" method="POST">
-
-    <div class="slice">
-     <h3 class="title">Informações dos Pais</h3>
-       <div class="form-group">
-         <label for="fatherName">Nome do pai:</label>
-          <input type="text" id="fatherName" name="fatherName">
-        </div>
-      <div class="form-group">
-        <label for="motherName">Nome da mãe:</label>
-        <input type="text" id="motherName" name="motherName">
-      </div>
-      <div class="form-group">
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email">
-       </div>
-    </div> */
-
 main {
   background-color: rgb(236, 226, 198);
 }
@@ -122,9 +101,13 @@ main .formGenerator .slice .title {
 }
 
 main .formGenerator .slice .form-group {
-  /* width: 35%; */
   width: 320px;
   margin: 0 auto;
+}
+
+main .formGenerator .slice .form-group .checkbox {
+  display: flex;
+  flex-direction: row;
 }
 
 main .formGenerator .slice .form-group label {
@@ -135,6 +118,13 @@ main .formGenerator .slice .form-group label {
   margin-bottom: 0.3rem;
   margin-left: 0.2rem;
   text-align: left;
+}
+
+main .formGenerator .slice .form-group label.radio-label {
+  font-size: .85rem;
+  font-weight: normal;
+  display: inline;
+  margin: 4px 10px 20px 5px;
 }
 
 main .formGenerator .slice .form-group input {
