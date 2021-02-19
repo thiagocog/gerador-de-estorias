@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "sass": "sass --watch ./public/scss/style.scss ./public/css/style.css"
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,8 @@
     "fs": "0.0.1-security",
     "html-pdf-node": "^1.0.7",
     "nodemon": "^2.0.7"
+  },
+  "devDependencies": {
+    "sass": "^1.32.8"
   }
 }

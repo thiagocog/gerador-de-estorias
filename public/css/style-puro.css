@@ -10,7 +10,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background-color: #ece2c6;
+  background-color: rgb(236, 226, 198);
 }
 
 .container {
@@ -19,21 +19,25 @@ body {
 }
 
 /* --------------------- */
+
 /* HEADER */
+
 header .intro {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
 }
+
 header .intro img {
-  width: 350px;
+  width:350px;
   margin-right: 2rem;
 }
+
 header .intro h1 {
   font-size: 3rem;
   font-family: monospace;
-  color: #d88c1b;
+  color: rgb(216, 140, 27);
 }
 
 header .faixa {
@@ -45,54 +49,67 @@ header .container {
   display: flex;
   flex-direction: row;
 }
+
 header .container .menu {
   width: 960px;
   text-align: center;
 }
+
+
 header .container .menu ul li {
   display: inline-block;
   padding: 20px 0;
 }
+
 header .container .menu ul li a {
   text-decoration: none;
   color: aliceblue;
   padding: 21px 50px;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
 header .container .menu ul li a:hover {
   color: coral;
   background-color: aliceblue;
 }
 
+
 /* MAIN */
+
 main {
-  background-color: #ece2c6;
+  background-color: rgb(236, 226, 198);
 }
+
 main .formGenerator form {
   text-align: center;
   font-family: monospace;
   margin-bottom: 40px;
 }
+
 main .formGenerator .slice {
-  border: #d88c1b 2px dashed;
+  border: rgb(216, 140, 27) 2px dashed;
   border-radius: 20px;
-  width: 480px;
+  width: 400px;
   margin: 20px auto;
   padding-bottom: 20px;
 }
+
 main .formGenerator .slice .title {
   font-size: 1.2rem;
   margin: 2.5rem 0 1.5rem 0;
-  color: #00a008;
+  color: rgb(0, 160, 8);
 }
+
 main .formGenerator .slice .form-group {
-  width: 400px;
+  width: 320px;
   margin: 0 auto;
 }
+
 main .formGenerator .slice .form-group .checkbox {
   display: flex;
   flex-direction: row;
 }
+
 main .formGenerator .slice .form-group label {
   color: coral;
   font-size: 1rem;
@@ -102,12 +119,14 @@ main .formGenerator .slice .form-group label {
   margin-left: 0.2rem;
   text-align: left;
 }
+
 main .formGenerator .slice .form-group label.radio-label {
-  font-size: 0.85rem;
+  font-size: .85rem;
   font-weight: normal;
   display: inline;
   margin: 4px 10px 20px 5px;
 }
+
 main .formGenerator .slice .form-group input {
   margin-bottom: 20px;
   width: 100%;
@@ -115,17 +134,24 @@ main .formGenerator .slice .form-group input {
   background-color: aliceblue;
   font-family: monospace;
   padding-left: 5px;
-  color: #d88c1b;
+  color: rgb(216, 140, 27) !important;
   border-color: transparent;
   border-radius: 8px;
 }
-main .formGenerator .slice .form-group input#friendName {
-  margin-bottom: 5px;
+
+main .formGenerator .slice .radio {
+  text-align: left;
 }
-main .formGenerator .slice .form-group input[type=radio] {
+
+main .formGenerator .slice .form-group input[type="radio"] {
   height: 1.5rem;
   width: auto;
 }
+
+main .formGenerator .slice .form-group input#friendName {
+  margin-bottom: 5px;
+}
+
 main .formGenerator .slice .form-group span {
   display: block;
   padding-bottom: 5px;
@@ -133,6 +159,7 @@ main .formGenerator .slice .form-group span {
   font-size: 1rem;
   font-weight: bold;
 }
+
 main .formGenerator .slice .form-group select {
   width: 100%;
   height: 1.8rem;
@@ -140,84 +167,98 @@ main .formGenerator .slice .form-group select {
   background-color: aliceblue;
   font-family: monospace;
   padding-left: 5px;
-  color: #d88c1b;
+  color: rgb(216, 140, 27);
   border-color: transparent;
   margin-bottom: 20px;
 }
-main .formGenerator .slice .radio {
-  text-align: left;
-}
+
 main .formGenerator .btn {
   width: 400px;
   margin: 0 auto;
   text-align: left;
+  padding-left: 40px;
 }
+
 main .formGenerator .btn button {
   padding: 10px 25px;
   border-radius: 8px;
-  border: #d88c1b 2px solid;
+  border: rgb(216, 140, 27) 2px solid;
   color: coral;
   font-weight: bold;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing:0.05em;
   cursor: pointer;
 }
+
 main .formGenerator .btn button:hover {
   color: aliceblue;
   background-color: coral;
 }
 
+
+
+
 /* FOOTER */
 footer {
-  background-color: #d88c1b;
+  background-color: rgb(216, 140, 27);
 }
+
 footer div.container {
   display: flex;
 }
+
 footer p {
   text-align: left;
   padding: 20px 0;
   margin: 0 auto;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 0.8rem;
   color: aliceblue;
   /* font-weight: bold; */
-  letter-spacing: 0.1em;
+  letter-spacing: .1em;
   display: inline-block;
 }
+
 footer p.rights {
   flex: 1;
 }
+
 footer div.container .redes-sociais {
   display: inline-block;
   text-align: right;
+  
 }
+
 footer div.container a {
   text-decoration: none;
   color: aliceblue;
   margin-right: 40px;
   padding: 15px 0;
 }
-footer div.container a.twitter:hover {
+
+div.container a.twitter:hover {
   color: #1A91DA;
   border-top: 3px solid #1A91DA;
 }
-footer div.container a.twitter:hover p {
+
+div.container a.twitter:hover p {
   color: #1A91DA;
 }
-footer div.container a.facebook:hover {
+
+div.container a.facebook:hover {
   color: #4064AC;
   border-top: 3px solid #4064AC;
 }
-footer div.container a.facebook:hover p {
+
+div.container a.facebook:hover p {
   color: #4064AC;
 }
-footer div.container a.instagram:hover {
+
+div.container a.instagram:hover {
   color: #E9287C;
-  border-top: 3px solid #E9287C;
-}
-footer div.container a.instagram:hover p {
-  color: #E9287C;
+  border-top: 3px solid #E9287C ;
 }
 
-/*# sourceMappingURL=style.css.map */
+div.container a.instagram:hover p {
+  color: #E9287C;
+}
