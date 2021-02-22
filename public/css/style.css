@@ -26,6 +26,11 @@ header .intro {
   align-items: center;
   margin-top: 50px;
 }
+header .intro a {
+  display: flex;
+  text-decoration: none;
+  align-items: center;
+}
 header .intro img {
   width: 350px;
   margin-right: 2rem;
@@ -67,6 +72,47 @@ header .container .menu ul li a:hover {
 /* MAIN */
 main {
   background-color: #ece2c6;
+}
+main.sobre {
+  padding: 3rem;
+  font-family: monospace;
+}
+main.sobre h2 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2.2rem;
+  color: #00a008;
+}
+main.sobre p {
+  display: inline-block;
+  font-size: 1.2rem;
+  padding: 0 10rem;
+  color: coral;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+main.sobre .btn {
+  text-align: center;
+}
+main.sobre .btn p {
+  font-size: 0.9rem;
+  padding: 10px 25px;
+  margin: 0;
+  display: inline-block;
+  border-radius: 8px;
+  border: #d88c1b 2px solid;
+  color: coral;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  margin: 2.2rem 0 1rem 0;
+  background-color: aliceblue;
+}
+main.sobre .btn p:hover {
+  color: aliceblue;
+  background-color: coral;
 }
 main .formGenerator form {
   text-align: center;

@@ -18,6 +18,8 @@
     body {
       background-color: rgb(236, 226, 198);
       color: coral;
+      /* display: flex;
+      flex-direction: column; */
     }
 
     main {
@@ -27,6 +29,7 @@
       padding: 20px;
       border: 4px dashed rgb(216, 140, 27);
       border-radius: 20px;
+      /* flex: 1; */
     }
 
     h1 {
@@ -43,9 +46,28 @@
       margin: 10px auto 30px auto;
     }
 
-    p {
-      font-size: 1.2rem;
+    main p {
+      font-size: 1.4rem;
       font-weight: bold;
+      margin-bottom: 3rem;
+    }
+
+    footer {
+      margin: 40px 0 0 0;
+      width: 100%;
+      background-color: rgb(216, 140, 27);
+      display: flex;
+      justify-content: space-around;
+    }
+
+    footer p {
+      color: rgb(236, 226, 198);
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+    
+    span {
+      color: rgb(25, 10, 156);
     }
 
   </style>
@@ -53,22 +75,17 @@
 <body>
 
   <main>
-    <h1>O dia perfeito de <%= childName %></h1>
-    <p>No dia <%= born %>, nasceu <%= childName %>, para alegria dos seus pais, <%= fatherName %> e <%= motherName %>.</p>
-    <p>Naquele dia e naquela cidade, <%= municipio %>, <%= state %>, não havia família mais feliz.</p>
-    
-
-    <p><%= email %></p>
-    <p><%= state %></p>
-    <p><%= municipio %></p>
-
-    <p><%= childGender %></p>
-    <p><%= born %></p>
-    <p><%= play %></p>
-    <p><%= friendName %></p>
-    <p><%= friendName2 %></p>
-    <p><%= favoritePet %></p>
+    <h1>Apresentação de <%= childName %></h1>
+    <p>No dia <span><%= born %></span>, nasceu <span><%= childName %></span>, para a alegria de seus pais, <span><%= fatherName %></span> e <span><%= motherName %></span>.</p>
+    <p>Naquele dia e naquela cidade, <span><%= municipio %></span>, <span><%= state %></span>, não havia família mais feliz!</p>
+    <p>Como <span><%= childGender.toLowerCase() %></span> alegre que é, <span><%= childName %></span> adora brincar de <span><%= play.toLowerCase() %></span> com <span><%= friendName %></span> e <span><%= friendName2 %></span>.</p>
+    <p>Além disso, <span><%= childName %></span> gosta brincar com animais de estimação, especialmente com <span><%= favoritePet.toLowerCase() %>s</span>.</p>
   </main>
+
+  <footer>
+    <div class="rights"><p>2021 - Thiago Gonçalves - Instituto Infnet</p></div>
+    <div class="email"><p>Arquivo enviado para: <span><%= email %></span></p></div>
+  </footer>
 
 </body>
 </html>
