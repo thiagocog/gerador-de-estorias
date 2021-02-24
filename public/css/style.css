@@ -2,7 +2,6 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   outline: none;
   list-style: none;
 }
@@ -54,8 +53,12 @@ header .container .menu {
   width: 960px;
   text-align: center;
 }
+header .container .menu ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 header .container .menu ul li {
-  display: inline-block;
   padding: 20px 0;
 }
 header .container .menu ul li a {
@@ -63,6 +66,11 @@ header .container .menu ul li a {
   color: aliceblue;
   padding: 21px 50px;
   font-family: Georgia, "Times New Roman", Times, serif;
+  margin: 0 auto;
+}
+header .container .menu ul li a.ativo {
+  color: coral;
+  background-color: aliceblue;
 }
 header .container .menu ul li a:hover {
   color: coral;

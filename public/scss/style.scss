@@ -2,7 +2,7 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  // box-sizing: border-box;
   outline: none;
   list-style: none;
 }
@@ -59,25 +59,32 @@ header .container {
     width: 960px;
     text-align: center;
 
-    ul li {
-      display: inline-block;
-      padding: 20px 0;
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
 
-      a {
-        text-decoration: none;
-        color: aliceblue;
-        padding: 21px 50px;
-        font-family: Georgia, 'Times New Roman', Times, serif;
-
-        // &.ativo {
-        //   color: coral;
-        //   background-color: aliceblue;
-        // }
-
-        &:hover {
-          color: coral;
-          background-color: aliceblue;
-        }
+      li {
+        // display: inline-block;
+        padding: 20px 0;
+  
+        a {
+          text-decoration: none;
+          color: aliceblue;
+          padding: 21px 50px;
+          font-family: Georgia, 'Times New Roman', Times, serif;
+          margin: 0 auto;
+  
+          &.ativo {
+            color: coral;
+            background-color: aliceblue;
+          }
+  
+          &:hover {
+            color: coral;
+            background-color: aliceblue;
+          }
+        } 
       }
     }
   }
