@@ -17,6 +17,7 @@ const formController = require('./controller/form-controller')
 app.set('view engine', 'ejs')
 
 
+
 // ESTABELECENDO QUAIS ARQUIVOS ESTÁTICOS SERÃO UTILIZADOS
 app.use(express.static(path.join(__dirname, 'public')))
 
