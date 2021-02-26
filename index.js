@@ -41,6 +41,7 @@ app.get('/about', aboutController.getAbout)
 
 
 // ABRINDO O SERVIDOR NA PORTA 3001
-app.listen(3001, () => {
+const port = process.env.PORT || 3001
+app.listen(port, () => {
   console.log('Server running at http://localhost:3001')
 })
