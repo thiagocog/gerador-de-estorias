@@ -42,21 +42,21 @@
           <div class="form-group">
             <h3 class="title">Informações dos Pais</h3>
             <label for="fatherName">Nome do pai</label>
-            <input type="text" id="fatherName" name="fatherName">
+            <input type="text" id="fatherName" name="fatherName" required>
           </div>
           <div class="form-group">
             <label for="motherName">Nome da mãe</label>
-            <input type="text" id="motherName" name="motherName">
+            <input type="text" id="motherName" name="motherName" required>
           </div>
           <div class="form-group">
             <label for="email">E-mail</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
           </div>
 
 
           <div class="form-group">
             <label for="state">Estado</label>
-            <select name="state" id="state">
+            <select name="state" id="state" required>
               <option value="">Selecione o Estado...</option>
               <% estado.forEach(item => { %>
                 <option value="<%= item.value %>"><%= item.option %></option>
@@ -66,7 +66,7 @@
 
           <div class="form-group">
             <label for="municipio">Município</label>
-            <input type="text" id="municipio" name="municipio">
+            <input type="text" id="municipio" name="municipio" required>
           </div>
 
 
@@ -96,7 +96,7 @@
 
           <div class="form-group">
             <label for="born">Data de Nascimento</label>
-            <input type="text" id="born" name="born">
+            <input type="text" id="born" name="born" required>
           </div>
           <div class="form-group">
             <label for="play">Brincadeira Favorita</label>
@@ -104,15 +104,15 @@
           </div>
           <div class="form-group">
             <label for="friendName">Melhores amigos</label>
-            <input type="text" id="friendName" name="friendName"><span> & </span>
-            <input type="text" id="friendName2" name="friendName2">
+            <input type="text" id="friendName" name="friendName" required><span> & </span>
+            <input type="text" id="friendName2" name="friendName2" required>
           </div>
 
 
 
           <div class="form-group">
             <label for="favoritePet">Animal Preferido</label>
-            <select name="favoritePet" id="favoritePet">
+            <select name="favoritePet" id="favoritePet" required>
               <option value="">Selecione...</option>
               <% animal.forEach(item => { %>
                 <option value="<%= item.value %>"><%= item.option %></option>

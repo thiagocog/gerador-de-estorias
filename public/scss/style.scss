@@ -90,8 +90,54 @@ header .container {
   }
 }
 
+// MAIN INDEX
 
-/* MAIN */
+.bloco {
+  height: calc(100vh - 303.4px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .index-main {
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 4.5rem;
+
+    .textos {
+      font-family: monospace;
+      // font-family: Georgia, 'Times New Roman', Times, serif;
+
+      h2 {
+        font-size: 2.2rem;
+        margin-top: 3.5rem;
+        margin-bottom: 2rem;
+        color: rgb(0, 160, 8);
+      }
+
+      p {
+        color: coral;
+        font-size: 1.2rem;
+        text-align: center;
+        font-weight: bold;
+        letter-spacing: 0.05rem;
+      }
+    }
+
+    .banner {
+
+      img {
+        width: 500px;
+        text-align: left;
+      }
+    }
+  }
+}
+
+
+/* MAIN GERAL */
+
 
 main {
   background-color: rgb(236, 226, 198);
