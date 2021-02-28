@@ -67,6 +67,7 @@ const handlePostForm = (req, res, next) => {
     state: statesResult.descricao,
     municipio: body.municipio,
     childName: body.childName,
+    childLastName: body.childLastName,
     childGender: genderResult.descricao,
     born: body.born,
     play: body.play,

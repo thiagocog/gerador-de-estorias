@@ -1,11 +1,11 @@
 const data = [
   {
     id: '1',
-    descricao: 'Menina',
+    descricao: 'Feminino',
   },
   {
     id: '2',
-    descricao: 'Menino',
+    descricao: 'Masculino',
   }
 ];
 

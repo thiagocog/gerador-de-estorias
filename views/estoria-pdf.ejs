@@ -79,11 +79,16 @@
   
   <div>
     <main>
-      <h1>Apresentação de <%= childName %></h1>
+      <h1>A vida de <%= childName + ' ' + childLastName %></h1>
       <p>No dia <span><%= born %></span>, nasceu <span><%= childName %></span>, para a alegria de seus pais, <span><%= fatherName %></span> e <span><%= motherName %></span>.</p>
       <p>Naquele dia e naquela cidade, <span><%= municipio %></span>, <span><%= state %></span>, não havia família mais feliz!</p>
-      <p>Como <span><%= childGender.toLowerCase() %></span> alegre que é, <span><%= childName %></span> adora brincar de <span><%= play.toLowerCase() %></span> com <span><%= friendName %></span> e <span><%= friendName2 %></span>.</p>
-      <p>Além disso, <span><%= childName %></span> gosta brincar com animais de estimação, especialmente com <span><%= favoritePet.toLowerCase() %>s</span>.</p>
+      <p>Como <% if (childGender === 'Feminino') { %>
+        <span>menina</span>
+      <% } else { %>
+        <span>menino</span>
+      <% } %> alegre que é, <span><%= childName %></span> adora brincar de <span><%= play.toLowerCase() %></span> com <span><%= friendName %></span> e <span><%= friendName2 %></span>.</p>
+      <p>Além disso, <span><%= childName %></span> gosta de brincar com animais de estimação, especialmente com <span><%= favoritePet.toLowerCase() %>s</span>.</p>
+      <p><span><%= childName %></span>, este conto foi um presente de uma pessoa que te quer sempre bem e que deseja que tenha uma vida repleta de alegrias.</p>
     </main>
   </div>
 
