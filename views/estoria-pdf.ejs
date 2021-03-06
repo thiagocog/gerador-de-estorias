@@ -72,6 +72,15 @@
       color: rgb(25, 10, 156);
     }
 
+    .last-paragraph::after {
+      content: "";
+      display: block;
+      background-color: coral;
+      width: 60px;
+      height: 2px;
+      margin: 20px auto 40px auto;
+    }
+
   </style>
 </head>
 <body>
@@ -87,7 +96,7 @@
       <% } else { %>
         <span>menino</span>
       <% } %> alegre que é, <span><%= childName %></span> adora brincar de <span><%= play.toLowerCase() %></span> com <span><%= friendName %></span> e <span><%= friendName2 %></span>.</p>
-      <p>Além disso, <span><%= childName %></span> gosta de brincar com animais de estimação, especialmente com <span><%= favoritePet.toLowerCase() %>s</span>.</p>
+      <p class="last-paragraph">Além disso, <span><%= childName %></span> gosta de brincar com animais de estimação, especialmente com <span><%= favoritePet.toLowerCase() %>s</span>.</p>
       <p><span><%= childName %></span>, este conto foi um presente de uma pessoa que te quer sempre bem e que deseja que tenha uma vida repleta de alegrias.</p>
     </main>
   </div>
